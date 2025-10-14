@@ -1,0 +1,16 @@
+# Ignore backend folder
+Backend/
+
+# Node.js
+node_modules/
+.env
+
+# Build folders
+dist/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
