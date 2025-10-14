@@ -10,19 +10,6 @@ const GNEWS_API_KEY = process.env.GNEWS_API_KEY;
 app.use(cors()); //allow all origins
 app.use(express.json());
 
-// Route for Crypto Prices
-app.get("/api/crypto-prices", async (req, res)=>{
-    try {
-        const url ="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,dogecoin";
-        const response = await fetch(url);
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        console.error("Error fetching crypto prices:", error);
-        res.status(500).json({error: "Failed to fetch crypto data"});
-    }
-});
-
 // Route for crypto news
 app.get("/api/crypto-news", async (req, res)=>{
     const apiurl = `https://gnews.io/api/v4/search?q=crypto&lang=en&apikey=${GNEWS_API_KEY}`;
