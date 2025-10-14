@@ -1,15 +1,8 @@
-# Ignore backend folder
-Backend/
+# Ignore node modules folder
+node_modules
 
-# Node.js
-node_modules/
+# Ignore environment variables file
 .env
-
-# Build folders
-dist/
-
-# Logs
-*.log
 
 # System files
 .DS_Store
