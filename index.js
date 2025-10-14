@@ -18,19 +18,21 @@ app.get("/api/crypto-prices", async (req, res)=>{
         const data = await response.json();
         res.json(data);
     } catch (error) {
+        console.error("Error fetching crypto prices:", error);
         res.status(500).json({error: "Failed to fetch crypto data"});
     }
 });
 
 // Route for crypto news
 app.get("/api/crypto-news", async (req, res)=>{
-    const apiurl = `https://gnews.io/api/v4/search?q=crypto&lang=en&token=${GNEWS_API_KEY}`;
+    const apiurl = `https://gnews.io/api/v4/search?q=crypto&lang=en&apikey=${GNEWS_API_KEY}`;
 
     try {
         const response = await fetch(apiurl);
         const data = await response.json();
         res.json(data);
     } catch (error) {
+        console.error("Error fetching crypto news:", error);
         res.status(500).json({error: "Failed to fetch crypto news"});
     }
 });
@@ -38,16 +40,17 @@ app.get("/api/crypto-news", async (req, res)=>{
 
 // Route for social news
 app.get("/api/social-news", async (req, res)=>{
-    const api_url = `https://gnews.io/api/v4/search?q=social media&lang=en&max=10&apikey=${GNEWS_API_KEY}&_=${new Date().getTime()}`;
+    const api_url = `https://gnews.io/api/v4/search?q=social%20media&lang=en&max=10&apikey=${GNEWS_API_KEY}&_=${new Date().getTime()}`;
 
     try {
         const response = await fetch(api_url);
         const data = await response.json();
         res.json(data); 
     } catch (error) {
+        console.error("Error fetching social news:", error);
         res.status(500).json({error: "Failed to fetch social news"});
     }
 });
 
 //server port
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on Port${PORT}`));
