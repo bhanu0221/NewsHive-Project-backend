@@ -68,5 +68,13 @@ app.get("/api/image-proxy", async (req, res) => {
     }
 });
 
+
+app.get("/", (req, res) => {
+    res.json({
+        status: "ok",
+        message: "Welcome to the News Hive API! The server is running correctly."
+    });
+});
+
 //server port
 app.listen(PORT, () => console.log(`Server running on Port${PORT}`));
