@@ -9,4 +9,6 @@ If you whant to visit News HIve-Github code
 
 ---
 
-To visit my News Hive! site 👉[click-here](https://bhanu0221.github.io/NewsHive-Project/)
+To visit my News Hive! site 👉[click-here](https://news-hive-frontend.netlify.app/)
+
+check and support me.😊
