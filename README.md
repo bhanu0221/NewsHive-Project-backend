@@ -5,7 +5,7 @@ Deployed backend on render for free and frontend part is deployed in github.
 ---
 
 If you whant to visit News HIve-Github code 
-👉[click here](https://github.com/bhanu0221/NewsHive-Project.git)
+👉[click here](https://github.com/bhanu0221/NewsHive-Project-Frontend.git)
 
 ---
 
