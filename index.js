@@ -27,7 +27,7 @@ app.get("/api/crypto-news", async (req, res)=>{
 
 // Route for social news
 app.get("/api/social-news", async (req, res)=>{
-    const api_url = `https://gnews.io/api/v4/search?q=social%20media&lang=en&max=10&apikey=${GNEWS_API_KEY}&_=${new Date().getTime()}`;
+    const api_url = `https://gnews.io/api/v4/search?q=social+media&lang=en&max=10&apikey=${GNEWS_API_KEY}&_=${Date.now()}`;
 
     try {
         const response = await fetch(api_url);
@@ -39,36 +39,7 @@ app.get("/api/social-news", async (req, res)=>{
     }
 });
 
-
-
-app.get("/api/image-proxy", async (req, res) => {
-    try {
-        const imageUrl = req.query.url;
-        if (!imageUrl) {
-            return res.status(400).json({ error: "Image URL is required" });
-        }
-
-        const response = await fetch(imageUrl);
-
-        // Check if the fetch was successful
-        if (!response.ok) {
-            return res.status(response.status).json({ error: "Failed to fetch image" });
-        }
-
-        // Forward the image content and content type to the client
-        const imageBuffer = await response.buffer();
-        const contentType = response.headers.get('content-type');
-
-        res.set('Content-Type', contentType);
-        res.send(imageBuffer);
-
-    } catch (error) {
-        console.error("Image proxy error:", error);
-        res.status(500).json({ error: "Failed to proxy image" });
-    }
-});
-
-
+// defalut backend message 
 app.get("/", (req, res) => {
     res.json({
         status: "ok",
