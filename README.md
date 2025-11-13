@@ -1,6 +1,6 @@
 # News Hive Backend code 
 I have made this backend proxy for News Hive! APIs thats help me to resolve CORS problem while fetching API keys.
-Deployed backend on render for free and frontend part is deployed in github. 
+Deployed backend on render for free and frontend part is deployed in Netlify. 
 
 ---
 
