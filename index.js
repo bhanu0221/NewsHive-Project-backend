@@ -48,4 +48,7 @@ app.get("/", (req, res) => {
 });
 
 //server port
-app.listen(PORT, () => console.log(`Server running on Port${PORT}`));
+app.listen(PORT, () => {
+    // The 'http://' is what makes it clickable
+    console.log(`Server running at: http://localhost:${PORT}`);
+});
